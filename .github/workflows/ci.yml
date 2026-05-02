@@ -113,7 +113,7 @@ jobs:
         shell: bash
         run: |
           cd "${{ env.CACHE_PATH }}"
-          python -m pip install ./ambuild
+          python3 -m pip install ./ambuild
 
       - name: Select clang compiler
         if: startsWith(runner.os, 'Linux')
@@ -129,7 +129,7 @@ jobs:
         run: |
           mkdir build
           cd build
-          python ../configure.py --enable-auto-versioning --enable-optimize --sdks="${{ env.SDKS }}" --mms-path="${{ env.CACHE_PATH }}/metamod-source" --hl2sdk-root="${{ env.CACHE_PATH }}" --sm-path="${{ env.CACHE_PATH }}/sourcemod"
+          python3 ../configure.py --enable-auto-versioning --enable-optimize --sdks="${{ env.SDKS }}" --mms-path="${{ env.CACHE_PATH }}/metamod-source" --hl2sdk-root="${{ env.CACHE_PATH }}" --sm-path="${{ env.CACHE_PATH }}/sourcemod"
           ambuild
 
           PLATFORM="${{ runner.os }}"
