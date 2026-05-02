@@ -51,7 +51,7 @@ jobs:
             gcc-multilib g++-multilib libstdc++6 lib32stdc++6 \
             libc6-dev libc6-dev-i386 linux-libc-dev \
             linux-libc-dev:i386 lib32z1-dev ${{ matrix.cc }} \
-            python3 python3-pip
+            python3 python3-pip git
 
       - name: Install Python dependencies
         run: |
