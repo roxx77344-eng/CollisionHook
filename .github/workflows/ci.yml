@@ -20,6 +20,7 @@ jobs:
 
     name: ${{ matrix.os }} - ${{ matrix.cc }}
     runs-on: ${{ matrix.os }}
+    container: ubuntu:23.04
 
     env:
       PROJECT: "collisionhook"
